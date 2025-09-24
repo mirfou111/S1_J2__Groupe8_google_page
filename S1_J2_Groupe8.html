@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google - Version Flexbox</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #222;
+            font-size: 13px;
+            margin-left: 15px;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            font-weight: normal;
+            margin-bottom: 30px;
+            letter-spacing: -5px;
+        }
+
+        .logo .letter-g1 { color: #4285f4; }
+        .logo .letter-o1 { color: #ea4335; }
+        .logo .letter-o2 { color: #fbbc04; }
+        .logo .letter-g2 { color: #4285f4; }
+        .logo .letter-l { color: #34a853; }
+        .logo .letter-e { color: #ea4335; }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            width: 584px;
+            max-width: 90%;
+            height: 46px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 15px;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+
+        .search-container:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .search-container:focus-within {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border-color: #4285f4;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            opacity: 0.3;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 0;
+            background: transparent;
+        }
+
+        .search-icons-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .icon-btn {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .icon-btn:hover {
+            opacity: 1;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 14px;
+        }
+
+        .btn {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: box-shadow 0.1s ease;
+        }
+
+        .btn:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            border-color: #dadce0;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e4e4e4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left, .footer-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer a {
+            color: #70757a;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 60px;
+                margin-bottom: 20px;
+            }
+
+            .search-container {
+                width: 90%;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="#" onclick="alert('Gmail')">Gmail</a>
+        <a href="#" onclick="alert('Images')">Images</a>
+        <a href="#" onclick="alert('Applications')">
+            <img src="./apps-svgrepo-com.svg" alt="">
+        </a>
+        <a href="#" onclick="alert('Connexion')">
+            <i class="fa-solid fa-user-circle"></i>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Logo Google -->
+        <div class="logo">
+            <span class="letter-g1">G</span>
+            <span class="letter-o1">o</span>
+            <span class="letter-o2">o</span>
+            <span class="letter-g2">g</span>
+            <span class="letter-l">l</span>
+            <span class="letter-e">e</span>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <input 
+                type="text" 
+                class="search-input" 
+                placeholder="Rechercher sur Google ou saisir une URL"
+                onkeypress="if(event.key==='Enter') alert('Recherche : ' + this.value)"
+            >
+            <div class="search-icons-right">
+                <svg class="icon-btn" viewBox="0 0 24 24" onclick="alert('Recherche vocale')">
+                    <path fill="#4285f4" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                    <path fill="#4285f4" d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                </svg>
+                <svg class="icon-btn" viewBox="0 0 24 24" onclick="alert('Recherche par image')">
+                    <circle fill="#34a853" cx="12" cy="12" r="3"/>
+                    <path fill="#4285f4" d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                    <path fill="#ea4335" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons-container">
+            <button class="btn" onclick="alert('Recherche Google')">Recherche Google</button>
+            <button class="btn" onclick="alert('J\'ai de la chance')">J'ai de la chance</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-left">
+            <a href="#" onclick="alert('À propos')">À propos</a>
+            <a href="#" onclick="alert('Publicité')">Publicité</a>
+            <a href="#" onclick="alert('Entreprise')">Entreprise</a>
+        </div>
+        <div class="footer-right">
+            <a href="#" onclick="alert('Confidentialité')">Confidentialité</a>
+            <a href="#" onclick="alert('Conditions')">Conditions</a>
+            <a href="#" onclick="alert('Paramètres')">Paramètres</a>
+        </div>
+    </div>
+</body>
+</html>
